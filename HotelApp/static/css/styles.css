@@ -1,0 +1,220 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Styles */
+header {
+    background: #f8f9fa;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+}
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+/* Navigation Styles */
+nav {
+    background: #000; /* Black background */
+    color: #fff;
+    padding: 10px 0;
+}
+nav a {
+    color: #fff;
+    padding: 15px 20px;
+    display: inline-block;
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+}
+nav a:hover, nav a:focus {
+    background: #007bff; /* Blue background on hover */
+    color: #fff; /* White text on hover */
+    border-radius: 5px;
+}
+nav a.active {
+    background: #007bff; /* Active link background */
+    color: #fff;
+}
+
+
+/* Section Styles */
+section {
+    padding: 60px 0;
+}
+
+/* About Section */
+.about {
+    background: #e9ecef;
+}
+.about h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+.about p {
+    margin-bottom: 15px;
+}
+.about .btn {
+    background: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.about .btn:hover {
+    background: #0056b3;
+}
+
+/* Counter Box Styles */
+.counter-box {
+    background: #fff;
+    padding: 40px 0;
+}
+.counter-item {
+    text-align: center;
+    padding: 20px;
+}
+.counter-item i {
+    font-size: 2em;
+    color: #007bff;
+}
+.counter-item h4 {
+    font-size: 2em;
+    margin: 10px 0;
+}
+.counter-item span {
+    display: block;
+    color: #666;
+}
+
+/* Service Box Container */
+.service-box {
+    background: #000 !important;
+    padding: 40px 0;
+}
+
+/* Individual Service Item */
+.service-item {
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px; /* Adds space between service items */
+    background-color: #fff; /* White background for each service item */
+    border: 1px solid #fff; /* Adds a light gray border around each item */
+    border-radius: 10px; /* Rounded corners for the service item box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for a 3D effect */
+}
+
+/* Service Item Heading */
+.service-item h4 {
+    font-size: 2em;
+    margin: 10px 0;
+    color: #333; /* Darker text color for headings */
+}
+
+/* Service Item Text/Span */
+.service-item span {
+    display: block;
+    color: #666; /* Gray text color for the description */
+    font-size: 1.1em; /* Slightly larger font size for better readability */
+}
+
+
+/* About Feature Section */
+.about-feature {
+    background: #343a40;
+    color: #fff;
+}
+.about-feature .service-item {
+    text-align: center;
+    padding: 20px;
+}
+.about-feature .service-item i {
+    font-size: 2em;
+}
+.about-feature .service-item h4 {
+    margin-top: 10px;
+    font-size: 1.5em;
+}
+
+/* Testimonial Styles */
+.testimonial {
+    background: #f8f9fa;
+}
+.testimonial-carousel {
+    margin-bottom: 30px;
+}
+.testimonial-carousel i {
+    font-size: 2em;
+    color: #007bff;
+}
+.testimonial-carousel p {
+    font-size: 1.2em;
+}
+.user {
+    margin-top: 10px;
+    font-style: italic;
+}
+.user span {
+    font-weight: bold;
+}
+
+/* Tab Styles */
+.nav-tabs .nav-link {
+    border: 1px solid #ddd;
+    border-radius: 5px 5px 0 0;
+    background: #f8f9fa;
+}
+.nav-tabs .nav-link.active {
+    background: #fff;
+    border-color: #ddd #ddd transparent;
+}
+.tab-content {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 0 0 5px 5px;
+    padding: 20px;
+}
+
+
+
+/* Footer Styles */
+footer {
+    background: #343a40;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    grid-area: ft;
+}
+
+
+  
+
+.footer_content, .footer_row, .copyright {
+    padding: 20px; 
+}
+
+.footer_row {
+    margin-top: 20px; 
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .about .col-lg-6 {
+        margin-bottom: 30px;
+    }
+    .about-feature .col-lg-4 {
+        margin-bottom: 20px;
+    }
+}
+
+
