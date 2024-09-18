@@ -1,0 +1,68 @@
+{% extends "hotel/base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}  
+{% block content %}
+    <section class="profile-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-3 text-center">
+                    {% if user.customer.profile.image %}
+                        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}" alt="Profile Image">
+                    {% else %}
+                        <img class="rounded-circle account-img" src="{% static 'default.jpg' %}" alt="Default Image">
+                    {% endif %}
+                </div>
+                <div class="col-md-9">
+                    <h1 class="text-left">{{ user.username }}</h1>
+                    <p class="text-left">{{ user.email }}</p> 
+                    <button type="button" class="btn btn-secondary rounded text-white" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                       Update <i class="fa fa-pencil"></i>
+                    </button>
+                </div>
+            </div>
+              
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="staticBackdropLabel">Update Profile Info</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="modal-body">
+                                <fieldset class="form-group from-control">
+                                    <legend class="border-bottom mb-4">Profile Information</legend>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Username</label>
+                                          {{ u_form.username }}
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label>Email</label>
+                                          {{ u_form.email }}
+                                        </div>
+                                    </div>
+                                    {{ p_form|crispy }}
+                                </fieldset>
+                                
+                            </div>
+                           
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          <button class="btn btn-primary" type="submit">Update Profile</button>
+                   
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                
+            </form>
+        </div>
+    </section>
+{% endblock content %}

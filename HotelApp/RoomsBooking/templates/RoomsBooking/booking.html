@@ -1,0 +1,38 @@
+
+{% extends "hotel/base.html" %}
+
+{% block content %}
+    <div class="container m-3">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="content-section">
+                    <form method="POST" class="my-class" name="booking_page">
+                        {% csrf_token %}
+                        <fieldset class="form-group from-control">
+                            <legend class="border-bottom mb-4">Booking</legend>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label class="datepicker">CheckIn Date</label>
+                                    {{ form.startdate }}
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="datepicker">CheckOut Date</label>
+                                    {{ form.enddate }}
+                                </div>
+                            </div>
+                        </fieldset>
+                        <div class="form-group">
+                            <input type="hidden" name="room_id" value="{{ room_id }}">
+                            <button class="btn btn-outline-info mt-3" type="submit">Submit</button>
+                        </div>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+
+
+

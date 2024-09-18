@@ -1,0 +1,43 @@
+{% extends "hotel/base.html" %}
+{% block content %}
+{% block title %}Dashboard {% endblock title %}
+<style>
+    .small-room-card-container {
+        max-width: 300px; /* Adjust as needed */
+        overflow: hidden; /* Hide overflow if necessary */
+    }
+</style>
+<h3 class="text-center text-success">My Bookings</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Room</th>
+            <th>Check in</th>
+            <th>Check out</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for each_booking in bookings %}
+            <tr>
+                <td>
+                    <div class="small-room-card-container">
+                        {% include 'RoomsBooking/room_cards.html' with room=each_booking.room %}
+                    </div>
+                </td>
+                <td>{{ each_booking.startdate }}</td>
+                <td>{{ each_booking.enddate }}</td>
+                <td>
+                    <!-- Place the action buttons inside the loop -->
+                    <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'booking_update'  each_booking.id%}">Update</a>
+                    <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'booking_cancel'  each_booking.id%}">Delete</a>
+                </td>
+            </tr>
+           
+        {% endfor %}
+        
+    </tbody>
+    
+</table>
+
+{% endblock content %}
